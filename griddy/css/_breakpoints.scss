@@ -1,0 +1,27 @@
+// set breakpoints based on content rather than 'common' screen sizes.
+// ideally use ems and not pixles for breakpoints
+// use multiples of 80 for breakpoint areas as fits well (320,400,480,560,640,720,800,880,960,1040,1120,1200) then convert ems
+// make fluid but  be aware of legacy IE's rounding up issue which will cause unexpected behavious at different points
+// mobile first but set a maximum width
+// IE 6/7/8 dont support media queries without heavy js. as those browsers dont appear on anything but desktops supply them with 960 experience.
+
+$breakpoints: 320,400,480,560,640,720,800,880,960,1040,1120,1200,1280,1360;
+$max-width: 1360px;
+$legacy-width: 960px;
+
+@mixin respond($point) {
+  @each $breakpoint in $breakpoints {
+    @if $point == $breakpoint {
+      @media (min-width:#{$breakpoint / 16}em) { @content; }
+    }
+  }
+  @if $point == legacy {
+		.lt-ie9 & { @content; }
+	}
+}
+
+@each $breakpoint in $breakpoints {
+	@media (min-width:#{$breakpoint / 16}em) { 
+		html:after { content:"#{$breakpoint}"; display:none; }
+	}	
+}

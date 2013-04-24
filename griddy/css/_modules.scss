@@ -1,0 +1,23 @@
+#carousel {
+	height:300px;
+	> div {
+		overflow:hidden;
+		> ul {
+			padding:0px;
+			margin:0px;
+			overflow:hidden;
+			width:200%;
+			position:absolute;
+			left:0%;
+			> li {
+				width:50%;
+				float:left;
+				height:300px;
+			}
+		}
+	}
+}
+
+.mobileaccordion-col {
+	.tab { border:1px solid red; }
+}

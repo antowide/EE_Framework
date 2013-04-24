@@ -1,0 +1,98 @@
+@import "breakpoints", "normalize", "typography", "mixins", "theme", "grid", "modules";
+
+html { font-size:100%; overflow-x:hidden; } //16px
+
+body {
+	background:#ECE7E4;
+	color:#333;
+  font-size:0.8rem;
+  line-height:1.4;
+  @include respond(640) { line-height:1.45; }
+  @include respond(960) { font-size:0.9rem; }
+  @include respond(1200) { font-size:1.0rem; }
+  @include respond(legacy) { font-size:0.9rem; line-height:1.45; }
+}
+
+img {
+	max-width:100%;
+	//width:100%;
+	//vertical-align:bottom;
+	//display:block;
+}
+
+a {
+	color:$aqua;
+	text-decoration:none;
+	&.button {
+		display:block;
+		text-align:center;
+		@include border-radius(3px);
+		padding:8px 15px;
+		font-weight:bold;
+		@include font-size(14);
+		@include respond(400) { display:inline-block; text-align:left; }	
+		@include respond(legacy) { display:inline-block; text-align:left; }
+	}
+	&.button:hover { 
+		@include transition(0.4s);
+	}
+}
+
+
+ul {
+	padding:0 0 0 20px;
+	&.button {
+		list-style:none;
+		padding:0px;
+		margin:20px 0 20px 0px;
+		@include respond(480) { margin:25px 0 25px -5px; }	
+		li {
+			display:inline;
+			@include respond(480) { margin:0px 5px; }	
+		}
+	}
+}
+
+h1,h2,h3,h4 { 
+	margin:0px;
+	font-weight:normal;
+	strong,b {
+		font-weight:bold;
+	}
+	@include respond(480) { 
+		font-family:rubrik_regular,Arial;
+		font-weight:normal;
+		strong,b {
+			font-weight:normal;
+			font-family:rubrik_semibold,Arial;
+		}
+	}
+}
+
+h1 {
+  @include font-size(42);
+
+}
+
+h2 {
+  @include font-size(26);
+  @include respond(480) { @include font-size(37) }	
+  line-height:1.2;
+}
+
+h3 {
+  @include font-size(24);
+  line-height:1.2;
+}
+
+.clearfix {
+  zoom:1;
+  &:before, &:after {
+    content: " ";
+ 		display: table;
+  }
+  &:after {
+  	clear:both;
+  }
+}
+

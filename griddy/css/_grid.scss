@@ -1,0 +1,78 @@
+.container {
+	margin:0 auto;
+	max-width:$max-width;
+	@include respond(legacy) { width:$legacy-width; }
+}
+
+.row, .container, .nested { @extend .clearfix; }
+
+
+.container {
+	@include respond(640) { padding:0px 10px; }
+	.container { 
+		padding:0px;
+	}
+}
+
+.container-hasbg {
+	@include respond(640) { padding:10px; }
+}
+
+.col { 
+	float:left;
+	.inner { 
+		margin:10px;
+		padding:15px 20px;
+		@include respond(640) { padding:20px 30px; }
+	}
+	.border {
+		border:1px solid #CCC;
+	}
+	.rounded {
+		@include border-radius(5px)
+	}
+	.nopadding {
+		padding:0px;
+	}
+	.nopaddingbottom {
+		padding-bottom:0px;
+	}
+	.nested {
+		padding:0px;
+		.inner {
+			margin:0px;
+		}
+	}
+}
+
+
+.span-3 { 
+	width:100%;
+	@include respond(480) { width:50%; }
+	@include respond(800) { width:25%; }
+	@include respond(legacy) { width:25%; }
+}
+.span-4 { 
+	width:100%;
+	@include respond(640) { width:33.33%; }
+	@include respond(legacy) { width:33.33%; }
+}
+.span-6 { 
+	width:100%;
+	@include respond(640) { width:50%; }
+	@include respond(legacy) { width:50%; }
+}
+.span-12 { 
+	width:100%;
+}
+
+#two-col-shout-img {
+	.span-6 {		
+		@include respond(640) { width:100%; }
+		@include respond(720) { width:50%; float:right; }
+		@include respond(legacy) { float:right; }	
+	}
+	.nopadding {
+		min-height:200px;
+	}
+}
