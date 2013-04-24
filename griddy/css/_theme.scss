@@ -1,0 +1,18 @@
+$yellow: #FFE600;
+$aqua: #009999;
+$white: #FFFFFF;
+$black: #333333;
+
+div.yellow { background:$yellow; }
+div.aqua { background:$aqua; }
+div.white { background:$white; }
+
+a.yellow { background:$yellow; color:$black; }
+a.aqua { background:$aqua; color:$white; }
+a.white { background:$white; color:$aqua; }
+
+a.yellow:hover { background:darken($yellow, 7%); }
+a.aqua:hover { background:darken($aqua, 7%); }
+a.white:hover { background:darken($white, 5%); }
+
+h3.aqua { color:$aqua; }

@@ -1,0 +1,21 @@
+$fonts: rubrik_light, rubrik_regular, rubrik_semibold;
+
+@each $font in $fonts {
+	@font-face {
+	font-family: '#{$font}';
+	src: 	url('../fonts/#{$font}.eot');
+	src: 	url('../fonts/#{$font}.eot?iefix') format('eot'),
+	     	url('../fonts/#{$font}.woff') format('woff'),
+		 		url('../fonts/#{$font}.ttf') format('truetype'),
+		 		url('../fonts/#{$font}.svg##{$font}') format('svg');
+				font-weight:normal; font-style:normal;
+	}
+}
+
+// (100/16 * pixel size) then change to percent
+@mixin font-size($size) {
+  font-size:(100 / 16) * $size * 1%;
+}
+
+h2.center { text-align:center; }
+.uppercase { text-transform:uppercase; }
